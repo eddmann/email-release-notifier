@@ -1,0 +1,22 @@
+name: 'Email Release Notifier'
+description: 'Send a release email after publishing or successful deployment'
+inputs:
+  to:
+    description: 'Who to send the email to'
+    required: true
+  from:
+    description: 'Who to send the email from'
+    required: true
+  subject:
+    description: 'What the email subject line should be'
+    required: true
+    default: 'Gone Live - {tag_name}'
+  sendGridToken:
+    description: 'The SendGrid API token'
+    required: true
+  GITHUB_TOKEN:
+    description: 'Used to fetch the release upon successful deployment events'
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
