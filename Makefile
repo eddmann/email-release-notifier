@@ -1,4 +1,4 @@
-IMAGE = node:12-alpine
+IMAGE = node:16-alpine
 DOCKER = docker run --rm -v $(PWD):/app:rw,delegated -w /app
 
 .PHONY: install
